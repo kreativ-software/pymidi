@@ -205,7 +205,7 @@ PYMIDIAllocateUniqueID (void)
     static SInt32 sequence = 0;
     
     do {
-        uniqueID = time (NULL) + sequence++;
+        uniqueID = (SInt32)(time (NULL) + sequence++);
     } while (PYMIDIIsUniqueIDInUse (uniqueID));
     
     return uniqueID;
